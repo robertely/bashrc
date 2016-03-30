@@ -9,6 +9,7 @@ sudo apt-get update
 
 # Install base packages:
 sudo apt-get install -y \
+  curl\
   vim-nox\
   git\
   make\
@@ -33,8 +34,13 @@ dropbox start -i
 mkdir -p /tmp/de-setup
 wget https://atom-installer.github.com/v1.6.1/atom-amd64.deb -O /tmp/de-setup/atom.deb
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/de-setup/chrome.deb
+wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb -O /tmp/de-setup/steam.deb
 sudo dpkg -i /tmp/de-setup/atom.deb
 sudo dpkg -i /tmp/de-setup/chrome.deb
+sudo dpkg -i /tmp/de-setup/steam.deb
+
+# Start Steam while we wait
+steam&
 
 #Setup u2f
 sudo wget https://raw.githubusercontent.com/robertely/libu2f-host/master/70-u2f.rules -O /etc/udev/rules.d/70-u2f.rules
