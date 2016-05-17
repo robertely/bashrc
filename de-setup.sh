@@ -3,6 +3,8 @@ if [[ $EUID -ne 0 ]]; then
    echo "Bro, do you even sudo?" 1>&2
    exit 1
 fi
+# Install PPAs
+sudo add-apt-repository ppa:masterminds/glide
 
 # Build apt-cache
 sudo apt-get update
@@ -17,6 +19,7 @@ sudo apt-get install -y \
   python-pip\
   python-dev\
   golang\
+  glide\
   terminator\
   tree\
   htop\
