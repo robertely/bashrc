@@ -1,8 +1,9 @@
 #!/bin/bash
-if [[ $EUID -ne 0 ]]; then
-   echo "Bro, do you even sudo?" 1>&2
+if [[ $EUID -e 0 ]]; then
+   echo "Do not run as sudo." 1>&2
    exit 1
 fi
+
 # Install PPAs
 sudo add-apt-repository ppa:masterminds/glide
 
