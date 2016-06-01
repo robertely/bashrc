@@ -1,11 +1,8 @@
 #!/bin/bash
 if [[ $EUID -eq 0 ]]; then
-   echo "Do not run as sudo." 1>&2
+   echo "Do not run with sudo." 1>&2
    exit 1
 fi
-
-# Install PPAs
-sudo add-apt-repository ppa:masterminds/glide
 
 # Build apt-cache
 sudo apt-get update
@@ -20,7 +17,6 @@ sudo apt-get install -y \
   python-pip\
   python-dev\
   golang\
-  glide\
   terminator\
   tree\
   htop\
@@ -43,6 +39,13 @@ sudo dpkg -i /tmp/de-setup/atom.deb
 sudo dpkg -i /tmp/de-setup/chrome.deb
 sudo dpkg -i /tmp/de-setup/steam.deb
 
+# Install atom packes
+apm install \
+  minimap\
+  autocomplete-python\
+  autocomplete-go\
+  autocomplete-bash-builtins
+  
 # Start Steam while we wait
 steam&
 
@@ -51,4 +54,5 @@ sudo wget https://raw.githubusercontent.com/robertely/libu2f-host/master/70-u2f.
 
 # Set wallpaper
 wget https://raw.githubusercontent.com/robertely/de-setup/master/Pam_Cheryl_RPG.png -O ~/Pictures/Pam_Cheryl_RPG.png
-gsettings set org.cinnamon.desktop.background picture-uri  "file:///home/rely/Pictures/Pam_Cheryl_RPG.png"
+# gsettings set org.cinnamon.desktop.background picture-uri  "file:///home/rely/Pictures/Pam_Cheryl_RPG.png"
+
