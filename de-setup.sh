@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ $EUID -e 0 ]]; then
+if [[ $EUID -eq 0 ]]; then
    echo "Do not run as sudo." 1>&2
    exit 1
 fi
@@ -32,7 +32,7 @@ sudo apt-get install -y \
   fonts-noto
 
 # Setup Dropbox while we wait
-dropbox start -i
+dropbox start -i&
 
 #Install extras - Jerks with out good repos
 mkdir -p /tmp/de-setup
