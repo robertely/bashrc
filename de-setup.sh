@@ -39,6 +39,9 @@ sudo dpkg -i /tmp/de-setup/atom.deb
 sudo dpkg -i /tmp/de-setup/chrome.deb
 sudo dpkg -i /tmp/de-setup/steam.deb
 
+# Pythoooon
+sudo pip install pep8
+
 # Install atom packes
 apm install \
   minimap\
