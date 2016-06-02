@@ -44,7 +44,8 @@ apm install \
   minimap\
   autocomplete-python\
   autocomplete-go\
-  autocomplete-bash-builtins
+  autocomplete-bash-builtins\
+  linter-python-pep8
   
 # Start Steam while we wait
 steam&
