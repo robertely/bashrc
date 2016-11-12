@@ -6,6 +6,7 @@ fi
 
 # PPAs
 # sudo add-apt-repository ppa:nathan-renniewaldock/flux -y 
+sudo add-apt-repository --yes ppa:js-reynaud/kicad-4 -y
 
 # Build apt-cache
 sudo apt-get update
@@ -25,11 +26,9 @@ sudo apt-get install -y \
   htop\
   atop\
   openvpn\
-# dropbox\
   transmission\
-  fonts-droid\
-  fonts-noto\
-# fluxgui\
+  fonts-droid-fallback\
+  fonts-noto-cjk\
   redshift
 
 # Setup Dropbox while we wait
