@@ -4,6 +4,9 @@ if [[ $EUID -eq 0 ]]; then
    exit 1
 fi
 
+# PPAs
+sudo add-apt-repository ppa:nathan-renniewaldock/flux -y 
+
 # Build apt-cache
 sudo apt-get update
 
@@ -22,13 +25,14 @@ sudo apt-get install -y \
   htop\
   atop\
   openvpn\
-  dropbox\
+#  dropbox\
   transmission\
   fonts-droid\
-  fonts-noto
+  fonts-noto\
+  fluxgui
 
 # Setup Dropbox while we wait
-dropbox start -i&
+# dropbox start -i&
 
 #Install extras - Jerks with out good repos
 mkdir -p /tmp/de-setup
