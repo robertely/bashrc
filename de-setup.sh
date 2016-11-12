@@ -5,7 +5,7 @@ if [[ $EUID -eq 0 ]]; then
 fi
 
 # PPAs
-sudo add-apt-repository ppa:nathan-renniewaldock/flux -y 
+# sudo add-apt-repository ppa:nathan-renniewaldock/flux -y 
 
 # Build apt-cache
 sudo apt-get update
@@ -25,11 +25,12 @@ sudo apt-get install -y \
   htop\
   atop\
   openvpn\
-#  dropbox\
+# dropbox\
   transmission\
   fonts-droid\
   fonts-noto\
-  fluxgui
+# fluxgui\
+  redshift
 
 # Setup Dropbox while we wait
 # dropbox start -i&
