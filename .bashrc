@@ -1,6 +1,6 @@
 # Alias block
-alias ll='ls -l'
-alias l='ls -1'
+alias ll='ls -al'
+alias l='ls -a1'
 
 # Terrible Chef things
 if hash chef 2>/dev/null; then
