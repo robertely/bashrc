@@ -35,6 +35,18 @@ BOLD=$(tput bold)
 UNDERLINE=$(tput sgr 0 1)
 RESET=$(tput sgr0)
 
+# Crude caffine replacement
+caff(){
+  local DURATION=${1-21600}
+  caffeinate -dim -t $DURATION &
+  echo "Caffinated for $DURATION seconds"
+}
+
+decaff(){
+  pkill -9 caffeinate
+  echo "Decaffinated"
+}
+
 # Prints colored git branch
 git_branch(){
   if [ -d ".git" ]; then
