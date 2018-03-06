@@ -5,8 +5,10 @@ if [[ $EUID -eq 0 ]]; then
 fi
 
 # PPAs
-# sudo add-apt-repository ppa:nathan-renniewaldock/flux -y 
+# Kicad
 sudo add-apt-repository --yes ppa:js-reynaud/kicad-4 -y
+# Kicad nightly - http://i3.kym-cdn.com/photos/images/newsfeed/000/511/991/3a5.jpg
+sudo add-apt-repository --yes ppa:js-reynaud/ppa-kicad
 
 # Build apt-cache
 sudo apt-get update
@@ -30,6 +32,8 @@ sudo apt-get install -y \
   transmission\
   fonts-droid-fallback\
   fonts-noto-cjk\
+  gparted\
+  vlc\
   redshift
 
 
