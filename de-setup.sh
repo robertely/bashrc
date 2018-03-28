@@ -36,6 +36,14 @@ sudo apt-get install -y \
   vlc\
   redshift
 
+#ARM
+sudo apt-get install -y \
+  gcc-arm-none-eabi \
+  gdb-arm-none-eabi \
+  binutils-arm-none-eabi \
+  openocd \
+  dfu-util
+
 
 #Install extras - Jerks with out good repos
 mkdir -p /tmp/de-setup
