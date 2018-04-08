@@ -9,6 +9,8 @@ fi
 sudo add-apt-repository --yes ppa:js-reynaud/kicad-4 -y
 # Kicad nightly - http://i3.kym-cdn.com/photos/images/newsfeed/000/511/991/3a5.jpg
 sudo add-apt-repository --yes ppa:js-reynaud/ppa-kicad
+# ARM
+sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa
 
 # Build apt-cache
 sudo apt-get update
@@ -38,9 +40,7 @@ sudo apt-get install -y \
 
 #ARM
 sudo apt-get install -y \
-  gcc-arm-none-eabi \
-  gdb-arm-none-eabi \
-  binutils-arm-none-eabi \
+  gcc-arm-embedded \
   openocd \
   dfu-util
 
