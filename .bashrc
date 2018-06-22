@@ -38,9 +38,13 @@ RESET=$(tput sgr0)
 
 # Crude caffine replacement
 caff(){
-  local DURATION=${1-21600}
-  caffeinate -dim -t $DURATION &
-  echo "Caffinated for $DURATION seconds"
+  if [[ $OSTYPE == darwin* ]]; then
+    local DURATION=${1-21600}
+    caffeinate -dim -t $DURATION &
+    echo "Caffinated for $DURATION seconds"
+  else
+    echo "DARWIN ONLY"
+  fi
 }
 
 decaff(){
