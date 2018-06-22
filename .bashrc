@@ -1,6 +1,7 @@
 # Alias block
 alias ll='ls -al'
 alias l='ls -a1'
+alias gr='go run *.go'
 
 # Terrible Chef things
 if hash chef 2>/dev/null; then
