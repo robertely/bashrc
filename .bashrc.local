@@ -1,25 +1,12 @@
-# Alias block
 alias ll='ls -al'
 alias l='ls -a1'
 alias gr='go run *.go'
 
-# Terrible Chef things
-if hash chef 2>/dev/null; then
-    eval "$(chef shell-init bash)"
-    export EDITOR=/usr/bin/vim
-fi
-
-# Terrible Ruby things
-if hash rbenv 2>/dev/null; then
-    eval "$(rbenv init -)"
-fi
-
-# Aws
-if hash aws_completer 2>/dev/null; then
-  complete -C aws_completer aws
-fi
-
 # Kube
+alias k='kubectl'
+alias kg='kubectl get'
+alias kd='kubectl describe'
+alias kall='kubectl get $(kubectl api-resources| awk '{ print $1 }'|grep -v "NAME"|xargs|sed -e 's/ /,/g')' # Thanks I hate it.
 if hash kubectl 2>/dev/null; then
     source <(kubectl completion bash) 
 fi
