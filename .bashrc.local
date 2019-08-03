@@ -1,16 +1,23 @@
 alias ll='ls -al'
 alias l='ls -a1'
 alias gr='go run *.go'
+alias reload='source ~/.bash_rc'
 
 # Kube
 alias k='kubectl'
 alias kg='kubectl get'
 alias kd='kubectl describe'
-alias kall='kubectl get $(kubectl api-resources| awk '{ print $1 }'|grep -v "NAME"|xargs|sed -e 's/ /,/g')' # Thanks I hate it.
+alias kall="kubectl get $(kubectl api-resources| awk '{ print $1 }'|grep -v 'NAME'|xargs|sed -e 's/ /,/g')" # Thanks I hate it.
+
+ksh(){
+  TARGET=$1
+  shift
+  kubectl exec -it $TARGET $@ -- /bin/bash
+}
+
 if hash kubectl 2>/dev/null; then
     source <(kubectl completion bash) 
 fi
-
 # TerrorForm
 if hash terraform 2>/dev/null; then
   complete -C terraform terraform
