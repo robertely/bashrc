@@ -12,7 +12,7 @@ alias kall="kubectl get $(kubectl api-resources| awk '{ print $1 }'|grep -v 'NAM
 ksh(){
   TARGET=$1
   shift
-  kubectl exec -it $TARGET $@ -- /bin/bash
+  kubectl exec -it $TARGET $@ -- /bin/sh
 }
 
 if hash kubectl 2>/dev/null; then
