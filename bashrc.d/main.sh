@@ -1,33 +1,3 @@
-alias ll='ls -al'
-alias l='ls -a1'
-alias gr='go run *.go'
-alias reload='source ~/.bash_rc'
-
-# Kube
-alias k='kubectl'
-alias kg='kubectl get'
-alias kd='kubectl describe'
-alias kall="kubectl get $(kubectl api-resources| awk '{ print $1 }'|grep -v 'NAME'|xargs|sed -e 's/ /,/g')" # Thanks I hate it.
-
-ksh(){
-  TARGET=$1
-  shift
-  kubectl exec -it $TARGET $@ -- /bin/sh
-}
-
-if hash kubectl 2>/dev/null; then
-    source <(kubectl completion bash) 
-fi
-# TerrorForm
-if hash terraform 2>/dev/null; then
-  complete -C terraform terraform
-fi
-
-# Golang
-export GOPATH=~/Projects/go
-export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
-
 # LS Colors
 export TERM=xterm-color
 export CLICOLOR=1
@@ -44,22 +14,6 @@ WHITE=$(tput setaf 7)
 BOLD=$(tput bold)
 UNDERLINE=$(tput sgr 0 1)
 RESET=$(tput sgr0)
-
-# Crude caffine replacement
-caff(){
-  if [[ $OSTYPE == darwin* ]]; then
-    local DURATION=${1-21600}
-    caffeinate -dim -t $DURATION &
-    echo "Caffinated for $DURATION seconds"
-  else
-    echo "DARWIN ONLY"
-  fi
-}
-
-decaff(){
-  pkill -9 caffeinate
-  echo "Decaffinated"
-}
 
 # Prints colored git branch
 git_branch(){
