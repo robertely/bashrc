@@ -5,7 +5,7 @@ bashrc_install(){
   local LINE='for f in $HOME/.bashrc.d/*.sh; do source $f; done'
   
   if [ ! -L "$RCD" ]; then
-    ln -s "$RCD" "$HOME/Projects/bashrc/bashrc.d/"
+    ln -s "$HOME/Projects/bashrc/bashrc.d/" "$RCD"
     echo '- Created bashrc.d link'
   fi
   grep -qF -- "$LINE" "$RC" || echo "$LINE" >> "$RC"
