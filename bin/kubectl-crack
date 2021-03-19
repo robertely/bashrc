@@ -1,0 +1,2 @@
+#!/bin/sh
+kubectl get $@ -o json | jq -r '.data[] |= @base64d | .data | to_entries[] | "\(.key): \(.value)"'
