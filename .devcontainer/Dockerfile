@@ -27,13 +27,13 @@ RUN rm ~/.bashrc
 RUN ln -s /workspaces/bashrc.d/.devcontainer/bashrc.sh ~/.bashrc
 
 ## Install rustup and common components
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y 
-ENV PATH="/root/.cargo/bin:$PATH"
-RUN rustup install nightly
-RUN rustup component add rustfmt
-RUN rustup component add rustfmt --toolchain nightly
-RUN rustup component add clippy 
-RUN rustup component add clippy --toolchain nightly
+# RUN curl https://sh.rustup.rs -sSf | sh -s -- -y 
+# ENV PATH="/root/.cargo/bin:$PATH"
+# RUN rustup install nightly
+# RUN rustup component add rustfmt
+# RUN rustup component add rustfmt --toolchain nightly
+# RUN rustup component add clippy 
+# RUN rustup component add clippy --toolchain nightly
 
-RUN cargo install cargo-expand
-RUN cargo install cargo-edit
+# RUN cargo install cargo-expand
+# RUN cargo install cargo-edit
